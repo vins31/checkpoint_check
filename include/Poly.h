@@ -19,17 +19,34 @@ class Poly
          * \return The current value of center
          */
 
+
         void addVertex(Vec* v);
 
-        //Vec Getcenter() { return center; }
-        /** Access normal
+        /** Access center (mean of the vertices)
+         * \return The current value of center
+         */
+        Vec center() { return _center; }
+
+        /** Access normal (cross product of 2 edges)
          * \return The current value of normal
          */
-        //Vec Getnormal() { return normal; }
+        Vec normal() { return _normal; }
+
+        /** Access radius (distance between the center and a vertex)
+         * \return The current value of radius
+         */
+        double radius() { return _radius; }
     protected:
     private:
-        Vec center; //!< Member variable "center"
-        Vec normal; //!< Member variable "normal"
+        Vec _center; //!< Member variable "center"
+        Vec _normal; //!< Member variable "normal"
+        double _radius; //!< Member variable "radius"
+
+        void calcCenter();
+
+        void calcNormal();
+
+        void calcRadius();
 };
 
 std::ostream& operator<< (std::ostream &os, Poly const &p);

@@ -35,7 +35,9 @@ void Vec::vect2vect(Vec const &start, Vec const &end)
 
 void Vec::zero()
 {
-    this->Vec();
+    x = 0;
+    y = 0;
+    z = 0;
 }
 
 Vec Vec::copy()
@@ -155,6 +157,6 @@ Vec& Vec::operator=(Vec const &v)
 
 std::ostream& operator<< (std::ostream &os, Vec const &v)
 {
-    std::cout << "Vec: x=" << v.x << ", y=" << v.y << ", z=" << v.z << std::endl;
+    std::cout << "Vec: x=" << v.x << ", y=" << v.y << ", z=" << v.z;
     return os;
 }

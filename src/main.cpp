@@ -15,15 +15,15 @@ int main()
     char s[30];
     strcpy(s, "8 1 2");
     Vec* v2 = parse_vector(s);
-    cout << *v2;
+    cout << *v2 << std::endl;
 
     char s2[300];
     strcpy(s2, "0 1 2 ; 4 5 6 ; 7 8 9");
     Poly* p = parse_poly(s2);
-    cout << *p;
+    cout << *p  << std::endl;
 
     CheckPoints* cp = read_file((char*)"cp1.txt");
-    cout << *cp;
+    cout << *cp  << std::endl;
 
     return 0;
 }
