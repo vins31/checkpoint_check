@@ -45,6 +45,8 @@ Vec* parse_vector(char* buffer)
     int i = 1;
     Vec* v = new Vec();
     v->x = atof(buffer);
+    /* We cannot use strtok else we would erase the static variable initialized
+       by the call to strtok in parse_poly */
     ccoord =  strtok2(trim(buffer), (char*)" ");
     while (ccoord!=NULL && i<3)
     {

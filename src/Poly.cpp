@@ -75,7 +75,9 @@ void Poly::calcRadius2()
 
 std::ostream& operator<< (std::ostream &os, Poly &p)
 {
-    os << "Poly   center: " << p.center() << " ; " << std::endl << "             normal: " << p.normal() << " ; radius: " << p.radius() << std::endl;
+    os << "Poly   center: " << p.center() << " ; " << std::endl
+       << "             normal: " << p.normal() << " ; radius: "
+       << p.radius()<< std::endl;
     for ( size_t i = 0, size = p.verts.size(); i < size; ++i )
     {
         os << "     [" << i << "] ";

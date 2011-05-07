@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    Vec v(1,2,3);
+    Vec v(1.1,0,3);
     cout << v+v << std::endl;
     char s[30];
     strcpy(s, "8 1 2");
@@ -24,6 +24,8 @@ int main()
 
     CheckPoints* cp = read_file((char*)"cp1.txt");
     cout << *cp  << std::endl;
+
+    cout << cp->in_poly_area(v, 0);
 
     return 0;
 }
