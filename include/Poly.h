@@ -15,11 +15,10 @@ class Poly
         Poly();
         /** Default destructor */
         ~Poly();
-        /** Access center
-         * \return The current value of center
+
+        /** Add a vertex in the polygon
+         * \param The vertex to add
          */
-
-
         void addVertex(Vec* v);
 
         /** Access center (mean of the vertices)
@@ -37,6 +36,9 @@ class Poly
          */
         double radius() { if (_radius == 0) {calcRadius();} return _radius; }
 
+        /** Access radius^2 (distance between the center and a vertex)
+         * \return The current value of radius
+         */
         double radius2() { if (_radius2 == 0) {calcRadius2();} return _radius2; }
 
     protected:
@@ -46,12 +48,20 @@ class Poly
         double _radius; //!< Member variable "radius"
         double _radius2; //!< Member variable "radius2" = _radius * _radius
 
+        /** Calculate the center of the polygon
+         */
         void calcCenter();
 
+        /** Calculate the normal of the polygon
+         */
         void calcNormal();
 
+        /** Calculate the radius of the polygon
+         */
         void calcRadius();
 
+        /** Calculate the radius^2 of the polygon
+         */
         void calcRadius2();
 };
 
