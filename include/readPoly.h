@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Poly.h"
+#include "CheckPoints.h"
 
 
-void read_text(char* file);
+CheckPoints* read_file(char* file);
 
 Poly* parse_poly(char* buffer);
 

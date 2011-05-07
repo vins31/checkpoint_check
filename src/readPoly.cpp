@@ -4,10 +4,10 @@
 
 #define LIN_MAX 30000
 
-void read_text(char* file)
+CheckPoints* read_file(char* file)
 {
 
-	/* Lecture du texte */
+	CheckPoints* cp = new CheckPoints;
 	FILE * pfile;
 	char line[LIN_MAX + 1];
 	pfile = fopen(file, "r");
@@ -19,8 +19,10 @@ void read_text(char* file)
 	while(fgets(line, LIN_MAX + 1, pfile) != NULL)
 	{
         line[LIN_MAX] = '\0';
+        cp->add(parse_poly(line));
 	}
 	fclose(pfile);
+	return cp;
 }
 
 Poly* parse_poly(char* buffer)
@@ -40,16 +42,16 @@ Vec* parse_vector(char* buffer)
 {
     char* ccoord;
     double vecl[3];
-    int i = 0;
+    int i = 1;
     Vec* v = new Vec();
-    ccoord =  strtok2(buffer, (char*)" ");
+    v->x = atof(buffer);
+    ccoord =  strtok2(trim(buffer), (char*)" ");
     while (ccoord!=NULL && i<3)
     {
         vecl[i] = atof(ccoord);
         ccoord =  strtok2(NULL, (char*)" ");
         i++;
     }
-    v->x = vecl[0];
     v->y = vecl[1];
     v->z = vecl[2];
     return v;

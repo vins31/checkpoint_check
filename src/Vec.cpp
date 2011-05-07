@@ -33,6 +33,11 @@ void Vec::vect2vect(Vec const &start, Vec const &end)
     z = end.z - start.z;
 }
 
+void Vec::zero()
+{
+    this->Vec();
+}
+
 Vec Vec::copy()
 {
     Vec* v = new Vec(x,y,z);
@@ -116,6 +121,22 @@ Vec& Vec::operator-=(Vec const &v)
     x -= v.x;
     y -= v.y;
     z -= v.z;
+    return *this;
+}
+
+Vec& Vec::operator*=(int lambda)
+{
+    x *= lambda;
+    y *= lambda;
+    z *= lambda;
+    return *this;
+}
+
+Vec& Vec::operator/=(int lambda)
+{
+    x /= lambda;
+    y /= lambda;
+    z /= lambda;
     return *this;
 }
 

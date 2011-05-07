@@ -33,6 +33,10 @@ class Vec
          */
         void vect2vect(Vec const &start, Vec const &end);
 
+        /** Set all the components of the vector to zero
+         */
+        void zero();
+
         /** Copy a vector
          * \return a new vector with the same components
          */
@@ -65,7 +69,7 @@ class Vec
 
         /** Return a new vector with all its components multiplied by the scalar lambda
          * \param lambda the scalar
-         * \ return the scalared vector
+         * \return the scalared vector
          */
         Vec scalarProduct(double const &lambda);
 
@@ -82,32 +86,44 @@ class Vec
         Vec crossProduct(Vec v);
 
         /** Return the component by component addition
-         * return the new vector
+         * \return the new vector
          */
         Vec operator+(Vec const &v);
 
         /** Return the component by component substraction
-         * return the new vector
+         * \return the new vector
          */
         Vec operator-(Vec const &v);
 
         /** Component by component addition
-         * return the new vector
+         * \return the new vector
          */
         Vec &operator+=(Vec const &v);
 
         /** Component by component addition
-         * return the new vector
+         *  \return the new vector
          */
         Vec &operator-=(Vec const &v);
 
+        /** Component by component multiplication
+         * \param lambda the scalar
+         * \return the new vector
+         */
+        Vec &operator*=(int lambda);
+
+        /** Component by component division
+         * \param lambda the scalar
+         * \return the new vector
+         */
+        Vec &operator/=(int lambda);
+
         /** Test the equality between two vectors
-         * return the equality test
+         * \return the equality test
          */
         bool operator==(Vec const &v);
 
         /** Assign the value of the current vector with the values of an other vector
-         * return the assigned vector
+         * \return the assigned vector
          */
         Vec &operator=(Vec const &v);
 
