@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
     Vec v(1,2,3);
-    cout << v+v;
+    cout << v+v << std::endl;
     char s[30];
     strcpy(s, "8 1 2");
     Vec* v2 = parse_vector(s);

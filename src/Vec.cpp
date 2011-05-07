@@ -59,7 +59,7 @@ double Vec::norm()
 {
     if (_norm == -1)
     {
-        _norm = sqrt(_norm2);
+        _norm = sqrt(norm2());
     }
     return _norm;
 }

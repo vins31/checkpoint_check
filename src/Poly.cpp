@@ -42,18 +42,40 @@ void Poly::calcNormal()
 
 void Poly::calcRadius()
 {
-    if (verts.size() > 0)
+    if (verts.size() > 1)
     {
-        Vec v;
-        v.vect2vect(center(),*(verts[0]));
-        _radius = v.norm();
+        for ( size_t i = 0, size = verts.size(); i < size; ++i )
+        {
+            Vec v;
+            v.vect2vect(center(),*(verts[i]));
+            if (v.norm()> _radius)
+            {
+                _radius = v.norm();
+            }
+        }
+    }
+}
+
+void Poly::calcRadius2()
+{
+    if (verts.size() > 1)
+    {
+        for ( size_t i = 0, size = verts.size(); i < size; ++i )
+        {
+            Vec v;
+            v.vect2vect(center(),*(verts[i]));
+            if (v.norm2()> _radius2)
+            {
+                _radius2 = v.norm2();
+            }
+        }
     }
 }
 
 
 std::ostream& operator<< (std::ostream &os, Poly &p)
 {
-    os << "Poly   center: " << p.center() << " ; normal: " << p.normal() << "radius: " << p.radius() << std::endl;
+    os << "Poly   center: " << p.center() << " ; " << std::endl << "             normal: " << p.normal() << " ; radius: " << p.radius() << std::endl;
     for ( size_t i = 0, size = p.verts.size(); i < size; ++i )
     {
         os << "     [" << i << "] ";
