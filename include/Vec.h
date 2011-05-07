@@ -1,6 +1,7 @@
 #ifndef VEC_H
 #define VEC_H
 
+#include <iostream>
 
 class Vec
 {
@@ -112,9 +113,13 @@ class Vec
 
 
 
+
+
     private:
         double _norm; //!< norm of the vector
         double _norm2; //!< norm^2 of the vector
 };
+
+std::ostream& operator<< (std::ostream &os, Vec const &v);
 
 #endif // VEC_H

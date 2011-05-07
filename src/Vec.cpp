@@ -1,6 +1,7 @@
 #include "math.h"
 #include "Vec.h"
 
+
 Vec::Vec()
 {
     x     = 0;
@@ -129,4 +130,10 @@ Vec& Vec::operator=(Vec const &v)
     y = v.y;
     z = v.z;
     return *this;
+}
+
+std::ostream& operator<< (std::ostream &os, Vec const &v)
+{
+    std::cout << "Vec: x=" << v.x << ", y=" << v.y << ", z=" << v.z << std::endl;
+    return os;
 }
