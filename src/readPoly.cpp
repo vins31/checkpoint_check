@@ -1,6 +1,6 @@
 
 #include "readPoly.h"
-
+#include "str.h"
 
 #define LIN_MAX 30000
 
@@ -42,11 +42,11 @@ Vec* parse_vector(char* buffer)
     double vecl[3];
     int i = 0;
     Vec* v = new Vec();
-    ccoord =  strtok(buffer, " ");
+    ccoord =  strtok2(buffer, (char*)" ");
     while (ccoord!=NULL && i<3)
     {
         vecl[i] = atof(ccoord);
-        ccoord =  strtok(NULL, " ");
+        ccoord =  strtok2(NULL, (char*)" ");
         i++;
     }
     v->x = vecl[0];

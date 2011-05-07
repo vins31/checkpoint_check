@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1304770352 source:/home/vins/Projects/cpp/checkpoint_check/src/Vec.cpp
+1304783457 source:/home/vins/Projects/cpp/checkpoint_check/src/Vec.cpp
 	"math.h"
 	"Vec.h"
 
 1304770307 /home/vins/Projects/cpp/checkpoint_check/include/Vec.h
 	<iostream>
 
-1304783402 source:/home/vins/Projects/cpp/checkpoint_check/src/main.cpp
+1304784560 source:/home/vins/Projects/cpp/checkpoint_check/src/main.cpp
 	<iostream>
 	<list>
 	<vector>
@@ -14,11 +14,12 @@
 	"Vec.h"
 	"readPoly.h"
 
-1304774074 /home/vins/Projects/cpp/checkpoint_check/include/str.h
+1304784970 /home/vins/Projects/cpp/checkpoint_check/include/str.h
 	<string.h>
 
-1304782570 source:/home/vins/Projects/cpp/checkpoint_check/src/readPoly.cpp
+1304785149 source:/home/vins/Projects/cpp/checkpoint_check/src/readPoly.cpp
 	"readPoly.h"
+	"str.h"
 
 1304781911 /home/vins/Projects/cpp/checkpoint_check/include/readPoly.h
 	<string.h>
@@ -26,13 +27,14 @@
 	<stdlib.h>
 	"Poly.h"
 
-1304774752 source:/home/vins/Projects/cpp/checkpoint_check/src/str.cpp
+1304785244 source:/home/vins/Projects/cpp/checkpoint_check/src/str.cpp
 	"str.h"
 
-1304782155 /home/vins/Projects/cpp/checkpoint_check/include/Poly.h
+1304784271 /home/vins/Projects/cpp/checkpoint_check/include/Poly.h
+	<iostream>
 	<vector>
 	"Vec.h"
 
-1304783206 source:/home/vins/Projects/cpp/checkpoint_check/src/Poly.cpp
+1304784279 source:/home/vins/Projects/cpp/checkpoint_check/src/Poly.cpp
 	"Poly.h"
 

@@ -1,12 +1,16 @@
 #ifndef POLY_H
 #define POLY_H
 
+#include <iostream>
 #include <vector>
 #include "Vec.h"
 
 class Poly
 {
     public:
+
+        std::vector<Vec*> verts; //!< Member variable "*verts"
+
         /** Default constructor */
         Poly();
         /** Default destructor */
@@ -24,9 +28,10 @@ class Poly
         //Vec Getnormal() { return normal; }
     protected:
     private:
-        std::vector<Vec*> verts; //!< Member variable "*verts"
         Vec center; //!< Member variable "center"
         Vec normal; //!< Member variable "normal"
 };
+
+std::ostream& operator<< (std::ostream &os, Poly const &p);
 
 #endif // POLY_H

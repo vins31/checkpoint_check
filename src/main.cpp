@@ -17,5 +17,10 @@ int main()
     Vec* v2 = parse_vector(s);
     cout << *v2;
 
+    char s2[300];
+    strcpy(s2, "0 1 2 ; 4 5 6 ; 7 8 9");
+    Poly* p = parse_poly(s2);
+    cout << *p;
+
     return 0;
 }
