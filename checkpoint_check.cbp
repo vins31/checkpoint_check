@@ -35,9 +35,17 @@
 			<Add option="-Wall" />
 			<Add directory="include" />
 		</Compiler>
+		<Unit filename="include/CheckPoints.h" />
+		<Unit filename="include/Poly.h" />
 		<Unit filename="include/Vec.h" />
+		<Unit filename="include/readPoly.h" />
+		<Unit filename="include/str.h" />
+		<Unit filename="src/CheckPoints.cpp" />
+		<Unit filename="src/Poly.cpp" />
 		<Unit filename="src/Vec.cpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/readPoly.cpp" />
+		<Unit filename="src/str.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />

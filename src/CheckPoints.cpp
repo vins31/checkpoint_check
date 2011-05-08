@@ -43,6 +43,20 @@ bool CheckPoints::in_poly_area(Vec pt, int k)
 	return true; // si and all the si2 are the same, some can be nil
 }
 
+bool CheckPoints::in_area(Vec pt, int k)
+{
+    Vec v;
+    v.vect2vect(polys[k]->center(), pt);
+    return (v.norm2() < 2*polys[k]->radius2());
+}
+
+int CheckPoints::side(Vec pt, int k)
+{
+    Vec v;
+    v.vect2vect(polys[k]->center(), pt);
+    return polys[k]->normal().dotProduct(v);
+}
+
 std::ostream& operator<< (std::ostream &os, CheckPoints const &cp)
 {
     os << "CheckPoints:" << std::endl;

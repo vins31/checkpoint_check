@@ -10,7 +10,7 @@
  */
 char* trim(char* s);
 
-/** An other strtok()
+/** An other strtok() which works a bit differently
  */
 char *strtok2(char *chaine_src, char *separateur);
 #endif
