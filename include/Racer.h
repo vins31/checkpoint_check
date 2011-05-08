@@ -32,7 +32,7 @@ class Racer
         /** Access _bestLap
          * \return The current value of _bestLap
          */
-        double lapBestLap() { return _bestLap; }
+        double bestLap() { return _bestLap; }
 
         /** Access _laps
          * \return The current value of _laps
@@ -75,6 +75,8 @@ class Racer
         int topSpeed() { return _topSpeed; }
 
         /** Update the state of the racer : if it passed the checkpoint, ...
+         * Assume that between two call of check, the distance between
+         * the two positions of the player is inferior to 4*radius_of_the_poly
          * \param x position of the player
          * \param y position of the player
          * \param z position of the player
@@ -103,5 +105,7 @@ class Racer
         bool    _previousInPoly; //!< Member variable "_previousInPoly"
         CheckPoints*  cp;
 };
+
+std::ostream& operator<< (std::ostream &os, Racer &racer);
 
 #endif // RACER_H

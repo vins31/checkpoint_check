@@ -27,7 +27,7 @@ int Racer::check(double x, double y, double z, double speed)
     {
         _topSpeed = speed;
     }
-    if (cp->in_area(pt, _nextCP) ==0)
+    if (cp->in_area(pt, _nextCP))
     {
         bool inPoly = cp->in_poly_area(pt, _nextCP);
         int  side   = cp->side(pt, _nextCP);
@@ -36,6 +36,8 @@ int Racer::check(double x, double y, double z, double speed)
             if (inPoly && _previousInPoly)
             {
                 _nextCP = (_nextCP+1)%cp->nbPolys();
+                side *= -1; // we changed of check_point so we switched of side
+                inPoly = false; // changing of checkpoint
                 ret = 1;
                 if (_nextCP == 0)
                 {
@@ -70,11 +72,25 @@ int Racer::check(double x, double y, double z, double speed)
             else
             {
                 ret = -1;
+                inPoly = false; // the player has to come back
+                side  *= -1;
             }
 
         }
         _previousInPoly = inPoly;
         _previousSide   = side;
     }
+    else
+    {
+        _previousInPoly = false;
+        _previousSide   = 0;
+    }
     return ret;
+}
+
+std::ostream& operator<< (std::ostream &os, Racer &racer)
+{
+    os << racer.name() << " flying a " << racer.aircraft() << " finished in: " << racer.time()
+       << "s ;  top speed: " << racer.topSpeed() << " ; best lap: " << racer.bestLap() << "s";
+    return os;
 }

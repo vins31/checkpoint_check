@@ -54,7 +54,20 @@ int CheckPoints::side(Vec pt, int k)
 {
     Vec v;
     v.vect2vect(polys[k]->center(), pt);
-    return polys[k]->normal().dotProduct(v);
+    double dotp = polys[k]->normal().dotProduct(v);
+    if (dotp>0)
+    {
+        return 1;
+    }
+    else if(dotp == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return -1;
+    }
+
 }
 
 std::ostream& operator<< (std::ostream &os, CheckPoints const &cp)
