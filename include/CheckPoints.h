@@ -13,6 +13,11 @@ class CheckPoints
         /** Default constructor */
         CheckPoints();
 
+        /** Return the number of polygons
+         * \return the number of polygons (polys.size())
+         */
+        int nbPolys() { return (int)polys.size();}
+
         /** Add a polygon in the list of polygons
          * \param p the polygon to add
          */
@@ -29,6 +34,7 @@ class CheckPoints
         bool in_poly_area(Vec pt, int k);
 
         /** Tells if the point pt is near the polygon
+            WARNING: requires a CONVEX polygon
          * \param pt the point to test
          * \param k  then polygon to test if the point is near from
          * \return true if the norm2(pt-polys[k].center) < 2*radius2,
@@ -48,10 +54,18 @@ class CheckPoints
     protected:
     private:
 
+
 };
 
 std::ostream& operator<< (std::ostream &os, CheckPoints const &cp);
 
+/** Tells if you have an acute or obtuse angle
+ * \param v1 the first vector which defines the sector of the angle
+ * \param v2 the second vector
+ * \param normal the normal to give an orientation to the space
+ * \return -1 if the angle is obtuse
+            1 if the angle is acute
+ */
 double angleSign(Vec v1, Vec v2, Vec normal);
 
 #endif // CHECKPOINTS_H
