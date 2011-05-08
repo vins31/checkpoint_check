@@ -1,28 +1,78 @@
 #ifndef RACER_H
 #define RACER_H
 
+#include <string>
+#include <time.h>
+
 #include "CheckPoints.h"
+
+using namespace std;
 
 class Racer
 {
     public:
         /** Default constructor */
-        Racer();
+        Racer(string name, string aircraft, int laps, CheckPoints* cp);
 
         /** Access _name
          * \return The current value of _name
          */
-        char* name() { return _name; }
+        string name() { return _name; }
 
         /** Access _aircraft
          * \return The current value of _aircraft
          */
-        char* aircraft() { return _aircraft; }
+        string aircraft() { return _aircraft; }
 
         /** Access _lapNumber
          * \return The current value of _lapNumber
          */
         int lapNumber() { return _lapNumber; }
+
+        /** Access _bestLap
+         * \return The current value of _bestLap
+         */
+        double lapBestLap() { return _bestLap; }
+
+        /** Access _laps
+         * \return The current value of _laps
+         */
+        int laps() { return _laps; }
+
+        /** Access _nextCP
+         * \return The current value of _nextCP
+         */
+        int nextCP() { return _nextCP; }
+
+        /** Access _previousInPoly
+         * \return The current value of _previousInPoly
+         */
+        bool previousInPoly() { return _previousInPoly; }
+
+        /** Access _previousSide
+         * \return The current value of _previousInPoly
+         */
+        int previousSide() { return _previousSide; }
+
+        /** Access _startLap
+         * \return The current value of _startLap
+         */
+        clock_t startLap() { return _startLap; }
+
+        /** Access _startRace
+         * \return The current value of _startRace
+         */
+        clock_t startRace() { return _startRace; }
+
+        /** Access _time
+         * \return The current value of _time
+         */
+        double time() { return _time; }
+
+        /** Access _topSpeed
+         * \return The current value of _topSpeed
+         */
+        int topSpeed() { return _topSpeed; }
 
         /** Update the state of the racer : if it passed the checkpoint, ...
          * \param x position of the player
@@ -39,17 +89,18 @@ class Racer
 
     protected:
     private:
-        char*  _name;           //!< Member variable "_name"
-        char*  _aircraft;       //!< Member variable "_aircraft"
-        int    _lapNumber;      //!< Member variable "_lapNumber"
-        int    _laps;           //!< Member variable "_laps
-        double _topSpeed;       //!< Member variable "_topSpeed"
-        double _bestLap;        //!< Member variable "_bestLap"
-        int    _nextCP;         //!< Member variable "_nextCP"
-        double _startRace;      //!< Member variable "_startRace"
-        double _startLap;       //!< Member variable "_startLap"
-        int    _previousSide;   //!< Member variable "_previousSide"
-        bool   _previousInPoly; //!< Member variable "_previousInPoly"
+        string  _name;           //!< Member variable "_name"
+        string  _aircraft;       //!< Member variable "_aircraft"
+        int     _lapNumber;      //!< Member variable "_lapNumber"
+        int     _laps;           //!< Member variable "_laps
+        double  _topSpeed;       //!< Member variable "_topSpeed"
+        double  _bestLap;        //!< Member variable "_bestLap" duration of the best lap
+        int     _nextCP;         //!< Member variable "_nextCP"
+        clock_t _startRace;      //!< Member variable "_startRace"
+        clock_t _startLap;       //!< Member variable "_startLap"
+        double  _time;           //!< Member variable "_time" duration of the race
+        int     _previousSide;   //!< Member variable "_previousSide"
+        bool    _previousInPoly; //!< Member variable "_previousInPoly"
         CheckPoints*  cp;
 };
 

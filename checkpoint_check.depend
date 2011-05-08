@@ -45,3 +45,11 @@
 	<vector>
 	"Poly.h"
 
+1304871085 source:/home/vins/Projects/cpp/checkpoint_check/src/Racer.cpp
+	"Racer.h"
+
+1304870818 /home/vins/Projects/cpp/checkpoint_check/include/Racer.h
+	<string>
+	<time.h>
+	"CheckPoints.h"
+

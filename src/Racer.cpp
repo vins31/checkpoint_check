@@ -1,15 +1,22 @@
 #include "Racer.h"
 
-Racer::Racer()
+Racer::Racer(string name, string aircraft, int laps, CheckPoints*  cp)
 {
      _lapNumber      = 1;
      _topSpeed       = 0;
-     _bestLap        = 0;
+     _bestLap        =-1;
+     _time           =-1;
      _nextCP         = 0;
      _startRace      = 0;
      _startLap       = 0;
      _previousSide   = 0;
      _previousInPoly = true;
+     _startRace      = clock();
+     _startLap       = clock();
+     this->_name     = name;
+     this->_aircraft = aircraft;
+     this->_laps     = laps;
+     this->cp        = cp;
 }
 
 int Racer::check(double x, double y, double z, double speed)
@@ -33,11 +40,31 @@ int Racer::check(double x, double y, double z, double speed)
                 if (_nextCP == 0)
                 {
                     ret = 2;
+                    clock_t endLap = clock();
+                    double lapTime = ((double)endLap - _startLap) / CLOCKS_PER_SEC;
+                    if (_bestLap == -1)
+                    {
+                        _bestLap = lapTime;
+                    }
+                    else if (lapTime < _bestLap)
+                    {
+                        _bestLap = lapTime;
+                    }
                     if (_lapNumber == _laps)
                     {
                         ret = 3;
+                        clock_t endRace = clock();
+                        _time = ((double)endRace - _startRace) / CLOCKS_PER_SEC;
                     }
                     _lapNumber ++;
+                }
+                else if (_nextCP ==1)
+                {
+                    _startLap = clock();
+                    if (_lapNumber == 1)
+                    {
+                        _startRace = clock();
+                    }
                 }
             }
             else
