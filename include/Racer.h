@@ -87,7 +87,7 @@ class Racer
                     3 if finished the race
                     0 else
          */
-        int check(double x, double y, double z, double speed);
+        int check(double x, double y, double z, double speed, double time);
 
     protected:
     private:
@@ -103,6 +103,7 @@ class Racer
         double  _time;           //!< Member variable "_time" duration of the race
         int     _previousSide;   //!< Member variable "_previousSide"
         bool    _previousInPoly; //!< Member variable "_previousInPoly"
+        bool    _finished;
         CheckPoints*  cp;
 };
 

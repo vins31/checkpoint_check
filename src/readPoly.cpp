@@ -1,3 +1,4 @@
+#include <iostream>
 
 #include "readPoly.h"
 #include "str.h"
@@ -41,19 +42,22 @@ Poly* parse_poly(char* buffer)
 Vec* parse_vector(char* buffer)
 {
     char* ccoord;
+    char* saveptr;
     double vecl[3];
-    int i = 1;
+    int i = 0;
     Vec* v = new Vec();
-    v->x = atof(buffer);
     /* We cannot use strtok else we would erase the static variable initialized
        by the call to strtok in parse_poly */
-    ccoord =  strtok2(trim(buffer), (char*)" ");
+    //ccoord =  strtok2(trim(buffer), (char*)" ");
+    ccoord =  strtok_r(trim(buffer), (char*)" ", &saveptr);
     while (ccoord!=NULL && i<3)
     {
+        //std::cout << ccoord << std::endl;
         vecl[i] = atof(ccoord);
-        ccoord =  strtok2(NULL, (char*)" ");
+        ccoord =  strtok_r(NULL, (char*)" ", &saveptr);
         i++;
     }
+    v->x = vecl[0];
     v->y = vecl[1];
     v->z = vecl[2];
     return v;

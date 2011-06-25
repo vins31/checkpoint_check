@@ -11,6 +11,7 @@ Racer::Racer(string name, string aircraft, int laps, CheckPoints*  cp)
      _startLap       = 0;
      _previousSide   = 0;
      _previousInPoly = true;
+     _finished       = false;
      _startRace      = clock();
      _startLap       = clock();
      this->_name     = name;
@@ -19,72 +20,76 @@ Racer::Racer(string name, string aircraft, int laps, CheckPoints*  cp)
      this->cp        = cp;
 }
 
-int Racer::check(double x, double y, double z, double speed)
+int Racer::check(double x, double y, double z, double speed, double time)
 {
     int ret = 0;
-    Vec pt(x, y, z);
-    if (speed>_topSpeed)
+    if (! _finished)
     {
-        _topSpeed = speed;
-    }
-    if (cp->in_area(pt, _nextCP))
-    {
-        bool inPoly = cp->in_poly_area(pt, _nextCP);
-        int  side   = cp->side(pt, _nextCP);
-        if (side+_previousSide == 0)
-        {
-            if (inPoly && _previousInPoly)
-            {
-                _nextCP = (_nextCP+1)%cp->nbPolys();
-                side *= -1; // we changed of check_point so we switched of side
-                inPoly = false; // changing of checkpoint
-                ret = 1;
-                if (_nextCP == 0)
-                {
-                    ret = 2;
-                    clock_t endLap = clock();
-                    double lapTime = ((double)endLap - _startLap) / CLOCKS_PER_SEC;
-                    if (_bestLap == -1)
-                    {
-                        _bestLap = lapTime;
-                    }
-                    else if (lapTime < _bestLap)
-                    {
-                        _bestLap = lapTime;
-                    }
-                    if (_lapNumber == _laps)
-                    {
-                        ret = 3;
-                        clock_t endRace = clock();
-                        _time = ((double)endRace - _startRace) / CLOCKS_PER_SEC;
-                    }
-                    _lapNumber ++;
-                }
-                else if (_nextCP ==1)
-                {
-                    _startLap = clock();
-                    if (_lapNumber == 1)
-                    {
-                        _startRace = clock();
-                    }
-                }
-            }
-            else
-            {
-                ret = -1;
-                inPoly = false; // the player has to come back
-                side  *= -1;
-            }
+		Vec pt(x, y, z);
+		if (speed>_topSpeed)
+		{
+		    _topSpeed = speed;
+		}
+		if (cp->in_area(pt, _nextCP))
+		{
+		    bool inPoly = cp->in_poly_area(pt, _nextCP);
+		    int  side   = cp->side(pt, _nextCP);
+		    if (side+_previousSide == 0)
+		    {
+		        if (inPoly && _previousInPoly)
+		        {
+		            _nextCP = (_nextCP+1)%cp->nbPolys();
+		            side *= -1; // we changed of check_point so we switched of side
+		            inPoly = false; // changing of checkpoint
+		            ret = 1;
+		            if (_nextCP == 0)
+		            {
+		                ret = 2;
+		                clock_t endLap = time;//clock(); // restart the clock for start_lap
+		                double lapTime = ((double)(endLap - _startLap)) / CLOCKS_PER_SEC;
+		                if (_bestLap == -1)
+		                {
+		                    _bestLap = lapTime;
+		                }
+		                else if (lapTime < _bestLap)
+		                {
+		                    _bestLap = lapTime;
+		                }
+		                if (_lapNumber == _laps)
+		                {
+		                    ret = 3;
+		                    _time = endLap - _startRace;
+		                    //_time = ((double)endLap - _startRace) / CLOCKS_PER_SEC;
+		                    _finished = true;
+		                }
+		                _lapNumber ++;
+		            }
+		            else if (_nextCP ==1)
+		            {
+		                _startLap = time;//clock();
+		                if (_lapNumber == 1)
+		                {
+		                    _startRace = time;//clock();
+		                }
+		            }
+		        }
+		        else
+		        {
+		            ret = -1;
+		            inPoly = false; // the player has to come back
+		            side  *= -1;
+		        }
 
-        }
-        _previousInPoly = inPoly;
-        _previousSide   = side;
-    }
-    else
-    {
-        _previousInPoly = false;
-        _previousSide   = 0;
-    }
+		    }
+		    _previousInPoly = inPoly;
+		    _previousSide   = side;
+		}
+		else
+		{
+		    _previousInPoly = false;
+		    _previousSide   = 0;
+		}
+	}
     return ret;
 }
 

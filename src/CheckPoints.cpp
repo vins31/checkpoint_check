@@ -1,4 +1,5 @@
 #include "CheckPoints.h"
+#include <time.h>
 
 CheckPoints::CheckPoints()
 {
