@@ -87,7 +87,7 @@ class Racer
                     3 if finished the race
                     0 else
          */
-        int check(double x, double y, double z, double speed, double time);
+        int check(double x, double y, double z, double speed, double time=0);
 
     protected:
     private:

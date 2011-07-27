@@ -35,6 +35,7 @@
 			<Add option="-Wall" />
 			<Add directory="include" />
 		</Compiler>
+		<Unit filename="Makefile" />
 		<Unit filename="include/CheckPoints.h" />
 		<Unit filename="include/Poly.h" />
 		<Unit filename="include/Racer.h" />
