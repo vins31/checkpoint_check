@@ -3,9 +3,9 @@
 #include <vector>
 #include <string.h>
 
-#include "Vec.h"
-#include "readPoly.h"
-#include "Racer.h"
+#include "checkpoint_check/Vec.h"
+#include "checkpoint_check/readPoly.h"
+#include "checkpoint_check/Racer.h"
 
 using namespace std;
 

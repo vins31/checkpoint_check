@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "readPoly.h"
-#include "str.h"
+#include "checkpoint_check/readPoly.h"
+#include "checkpoint_check/str.h"
 
 #define LIN_MAX 30000
 
