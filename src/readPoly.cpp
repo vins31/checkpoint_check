@@ -49,12 +49,13 @@ Vec* parse_vector(char* buffer)
     /* We cannot use strtok else we would erase the static variable initialized
        by the call to strtok in parse_poly */
     //ccoord =  strtok2(trim(buffer), (char*)" ");
-    ccoord =  strtok_r(trim(buffer), (char*)" ", &saveptr);
+    ccoord =  strtok_r2(trim(buffer), (char*)" ", &saveptr);
+
     while (ccoord!=NULL && i<3)
     {
         //std::cout << ccoord << std::endl;
         vecl[i] = atof(ccoord);
-        ccoord =  strtok_r(NULL, (char*)" ", &saveptr);
+        ccoord =  strtok_r2(NULL, (char*)" ", &saveptr);
         i++;
     }
     v->x = vecl[0];

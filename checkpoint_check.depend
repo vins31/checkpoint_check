@@ -1,19 +1,19 @@
 # depslib dependency file v1.0
-1304796033 source:/home/vins/Projects/cpp/checkpoint_check/src/Vec.cpp
-	"math.h"
-	"Vec.h"
+1311931674 source:/home/vins/Projects/cpp/checkpoint_check/src/Vec.cpp
+	<math.h>
+	"checkpoint_check/Vec.h"
 
 1304790771 /home/vins/Projects/cpp/checkpoint_check/include/Vec.h
 	<iostream>
 
-1304875889 source:/home/vins/Projects/cpp/checkpoint_check/src/main.cpp
+1311931585 source:/home/vins/Projects/cpp/checkpoint_check/src/main.cpp
 	<iostream>
 	<list>
 	<vector>
 	<string.h>
-	"Vec.h"
-	"readPoly.h"
-	"Racer.h"
+	"checkpoint_check/Vec.h"
+	"checkpoint_check/readPoly.h"
+	"checkpoint_check/Racer.h"
 
 1304861761 /home/vins/Projects/cpp/checkpoint_check/include/str.h
 	<string.h>
@@ -28,29 +28,56 @@
 	<stdlib.h>
 	"CheckPoints.h"
 
-1304785244 source:/home/vins/Projects/cpp/checkpoint_check/src/str.cpp
-	"str.h"
+1312135247 source:/home/vins/Projects/cpp/checkpoint_check/src/str.cpp
+	"checkpoint_check/str.h"
 
 1304799647 /home/vins/Projects/cpp/checkpoint_check/include/Poly.h
 	<iostream>
 	<vector>
 	"Vec.h"
 
-1304797098 source:/home/vins/Projects/cpp/checkpoint_check/src/Poly.cpp
-	"Poly.h"
+1311931591 source:/home/vins/Projects/cpp/checkpoint_check/src/Poly.cpp
+	"checkpoint_check/Poly.h"
 
-1304874110 source:/home/vins/Projects/cpp/checkpoint_check/src/CheckPoints.cpp
-	"CheckPoints.h"
+1311931557 source:/home/vins/Projects/cpp/checkpoint_check/src/CheckPoints.cpp
+	"checkpoint_check/CheckPoints.h"
+	<time.h>
 
 1304866982 /home/vins/Projects/cpp/checkpoint_check/include/CheckPoints.h
 	<vector>
 	"Poly.h"
 
-1304875903 source:/home/vins/Projects/cpp/checkpoint_check/src/Racer.cpp
-	"Racer.h"
+1311931595 source:/home/vins/Projects/cpp/checkpoint_check/src/Racer.cpp
+	"checkpoint_check/Racer.h"
 
 1304874901 /home/vins/Projects/cpp/checkpoint_check/include/Racer.h
 	<string>
 	<time.h>
 	"CheckPoints.h"
+
+1304866982 /home/vins/Projects/cpp/checkpoint_check/include/checkpoint_check/CheckPoints.h
+	<vector>
+	"Poly.h"
+
+1304799647 /home/vins/Projects/cpp/checkpoint_check/include/checkpoint_check/Poly.h
+	<iostream>
+	<vector>
+	"Vec.h"
+
+1304790771 /home/vins/Projects/cpp/checkpoint_check/include/checkpoint_check/Vec.h
+	<iostream>
+
+1311533753 /home/vins/Projects/cpp/checkpoint_check/include/checkpoint_check/Racer.h
+	<string>
+	<time.h>
+	"CheckPoints.h"
+
+1304799859 /home/vins/Projects/cpp/checkpoint_check/include/checkpoint_check/readPoly.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"CheckPoints.h"
+
+1312135373 /home/vins/Projects/cpp/checkpoint_check/include/checkpoint_check/str.h
+	<string.h>
 

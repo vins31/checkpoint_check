@@ -13,4 +13,8 @@ char* trim(char* s);
 /** An other strtok() which works a bit differently
  */
 char *strtok2(char *chaine_src, char *separateur);
+
+/** Portable implementation of strtok_r()
+*/
+char* strtok_r2(char *ptr, const char *sep, char **end);
 #endif

@@ -40,6 +40,12 @@
 		<Unit filename="include/Poly.h" />
 		<Unit filename="include/Racer.h" />
 		<Unit filename="include/Vec.h" />
+		<Unit filename="include/checkpoint_check/CheckPoints.h" />
+		<Unit filename="include/checkpoint_check/Poly.h" />
+		<Unit filename="include/checkpoint_check/Racer.h" />
+		<Unit filename="include/checkpoint_check/Vec.h" />
+		<Unit filename="include/checkpoint_check/readPoly.h" />
+		<Unit filename="include/checkpoint_check/str.h" />
 		<Unit filename="include/readPoly.h" />
 		<Unit filename="include/str.h" />
 		<Unit filename="src/CheckPoints.cpp" />

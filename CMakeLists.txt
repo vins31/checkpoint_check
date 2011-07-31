@@ -17,13 +17,24 @@ file(
 )
 
 #Déclaration de l'exécutable
-add_executable(
-	checkpoint_check
-	${source_files}
-)
+#add_executable(
+#	checkpoint_check
+#	${source_files}
+#)
 
 add_library(
     _checkpoint_check 
     SHARED
     ${source_files} 
 )
+
+if (FORCE_CPU STREQUAL "32bits")
+    message("Compiling on 32bits")
+    add_definitions(                        -m32)
+    set(CMAKE_EXE_LINKER_FLAGS                "${CMAKE_EXE_LINKER_FLAGS} -m32")
+    set(CMAKE_SHARED_LIBRARY_C_FLAGS        "${CMAKE_SHARED_LIBRARY_C_FLAGS} -m32")
+    set(CMAKE_SHARED_LIBRARY_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_CXX_FLAGS} -m32")
+    SET_TARGET_PROPERTIES(_checkpoint_check PROPERTIES OUTPUT_NAME "_checkpoint_check32")
+endif (FORCE_CPU STREQUAL "32bits") 
+
+
