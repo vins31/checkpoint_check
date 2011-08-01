@@ -1,10 +1,12 @@
 #include "checkpoint_check/Poly.h"
 
+
 Poly::Poly()
 {
     _center = Vec();
     _normal = Vec();
     _radius = 0;
+    _radius2 = 0;
 }
 
 Poly::~Poly()
@@ -50,7 +52,7 @@ void Poly::calcRadius()
             v.vect2vect(center(),*(verts[i]));
             if (v.norm()> _radius)
             {
-                _radius = v.norm();
+                _radius = v.norm(); //cout << "radius_v" << v << endl;
             }
         }
     }
@@ -77,7 +79,7 @@ std::ostream& operator<< (std::ostream &os, Poly &p)
 {
     os << "Poly   center: " << p.center() << " ; " << std::endl
        << "             normal: " << p.normal() << " ; radius: "
-       << p.radius()<< std::endl;
+       << p.radius()<< " ; radius2: " << p.radius2() << std::endl;
     for ( size_t i = 0, size = p.verts.size(); i < size; ++i )
     {
         os << "     [" << i << "] ";

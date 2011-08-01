@@ -6,7 +6,7 @@
 1304790771 /home/vins/Projects/cpp/checkpoint_check/include/Vec.h
 	<iostream>
 
-1311931585 source:/home/vins/Projects/cpp/checkpoint_check/src/main.cpp
+1312224163 source:/home/vins/Projects/cpp/checkpoint_check/src/main.cpp
 	<iostream>
 	<list>
 	<vector>
@@ -18,9 +18,10 @@
 1304861761 /home/vins/Projects/cpp/checkpoint_check/include/str.h
 	<string.h>
 
-1304797030 source:/home/vins/Projects/cpp/checkpoint_check/src/readPoly.cpp
-	"readPoly.h"
-	"str.h"
+1312135434 source:/home/vins/Projects/cpp/checkpoint_check/src/readPoly.cpp
+	<iostream>
+	"checkpoint_check/readPoly.h"
+	"checkpoint_check/str.h"
 
 1304799859 /home/vins/Projects/cpp/checkpoint_check/include/readPoly.h
 	<string.h>
@@ -36,12 +37,14 @@
 	<vector>
 	"Vec.h"
 
-1311931591 source:/home/vins/Projects/cpp/checkpoint_check/src/Poly.cpp
+1312225275 source:/home/vins/Projects/cpp/checkpoint_check/src/Poly.cpp
 	"checkpoint_check/Poly.h"
 
-1311931557 source:/home/vins/Projects/cpp/checkpoint_check/src/CheckPoints.cpp
+1312225437 source:/home/vins/Projects/cpp/checkpoint_check/src/CheckPoints.cpp
 	"checkpoint_check/CheckPoints.h"
 	<time.h>
+	<stdio.h>
+	<iostream>
 
 1304866982 /home/vins/Projects/cpp/checkpoint_check/include/CheckPoints.h
 	<vector>

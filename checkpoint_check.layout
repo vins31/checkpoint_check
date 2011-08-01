@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Makefile" open="1" top="0" tabpos="1">
+	<File name="Makefile" open="1" top="0" tabpos="2">
 		<Cursor position="361" topLine="0" />
 	</File>
 	<File name="include/CheckPoints.h" open="0" top="0" tabpos="7">
@@ -28,19 +28,19 @@
 	<File name="src/CheckPoints.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="782" topLine="69" />
 	</File>
-	<File name="src/Poly.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="1333" topLine="0" />
+	<File name="src/Poly.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="1333" topLine="50" />
 	</File>
-	<File name="src/Racer.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="639" topLine="12" />
+	<File name="src/Racer.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="639" topLine="22" />
 	</File>
 	<File name="src/Vec.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="2249" topLine="3" />
 	</File>
-	<File name="src/main.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="2018" topLine="21" />
+	<File name="src/main.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="567" topLine="18" />
 	</File>
-	<File name="src/readPoly.cpp" open="1" top="1" tabpos="4">
+	<File name="src/readPoly.cpp" open="1" top="0" tabpos="5">
 		<Cursor position="1237" topLine="28" />
 	</File>
 	<File name="src/str.cpp" open="1" top="0" tabpos="6">

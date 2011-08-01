@@ -17,16 +17,18 @@ file(
 )
 
 #Déclaration de l'exécutable
-#add_executable(
-#	checkpoint_check
-#	${source_files}
-#)
+add_executable(
+	checkpoint_check
+	${source_files}
+)
 
 add_library(
     _checkpoint_check 
     SHARED
     ${source_files} 
 )
+
+target_link_libraries(checkpoint_check -lm)
 
 if (FORCE_CPU STREQUAL "32bits")
     message("Compiling on 32bits")

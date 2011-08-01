@@ -12,6 +12,7 @@ using namespace std;
 int main()
 {
     Vec v(0.5,0.5,3);
+    Vec v2(1.1,1.1,0);
 //    cout << v+v << std::endl;
 //    char s[30];
 //    strcpy(s, "8 1 2");
@@ -24,9 +25,13 @@ int main()
 //    cout << *p  << std::endl;
 
     CheckPoints* cp = read_file((char*)"cp1.txt");
-//    cout << *cp  << std::endl;
+    cout << *cp  << std::endl;
 
-//    cout << cp->in_poly_area(v, 0) << endl;
+    cout << endl<< "First tests" << endl;
+    cout << cp->in_poly_area(v, 0) << endl;
+    cout << cp->in_poly_area(v2, 0) << endl;
+    cout << cp->in_area(v, 0) << endl;
+    cout << cp->in_area(v2, 0) << endl;
 
     Racer racer("Vins", "f-16", 2, cp);
     cout << "check: " << racer.check(0.3, 0.3, -100, 20) << endl;
