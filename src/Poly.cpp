@@ -44,6 +44,7 @@ void Poly::calcNormal()
 
 void Poly::calcRadius()
 {
+    // Huh stupid, we could just do a sqrt(this->radius())
     if (verts.size() > 1)
     {
         for ( size_t i = 0, size = verts.size(); i < size; ++i )

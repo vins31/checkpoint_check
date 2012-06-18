@@ -1,7 +1,11 @@
 #include "checkpoint_check/Racer.h"
 
+#include <iostream> // debug
+using namespace std;
+
 Racer::Racer(string name, string aircraft, int laps, CheckPoints*  cp)
 {
+    cout << "Racer start" << endl;
      _lapNumber      = 1;
      _topSpeed       = 0;
      _bestLap        =-1;
@@ -12,12 +16,14 @@ Racer::Racer(string name, string aircraft, int laps, CheckPoints*  cp)
      _previousSide   = 0;
      _previousInPoly = true;
      _finished       = false;
+     cout << "Racer middle" << endl;
      _startRace      = clock();
      _startLap       = clock();
      this->_name     = name;
      this->_aircraft = aircraft;
      this->_laps     = laps;
      this->cp        = cp;
+     cout << "Racer end" << endl;
 }
 
 int Racer::check(double x, double y, double z, double speed, double time)
